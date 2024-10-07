@@ -60,7 +60,9 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-let humanChoice = getHumanChoice();
+function fiveRound() {
+    // console.log(playRound(getHumanChoice(), getComputerChoice()));
+    let humanChoice = getHumanChoice();
 if (humanChoice !== "Invalid choice") {
     let computerChoice = getComputerChoice();
     console.log("Computer chose:", computerChoice);
@@ -68,3 +70,9 @@ if (humanChoice !== "Invalid choice") {
 } else {
     console.log("Enter Rock, Paper or Scissors")
 }
+}
+
+fiveRound();
+fiveRound();
+fiveRound();
+fiveRound();
