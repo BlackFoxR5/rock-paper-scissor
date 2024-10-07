@@ -11,11 +11,11 @@ function getComputerChoice() {  //computer's choice
     }
 }
 
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 function getHumanChoice() { //user's choice
     let choice = prompt("Rock, Paper or Scissors?");
-    choice = choice.toLowerCase();
+    choice = choice.toLowerCase(); //to make case insensitive inputs
 
     if (choice === "rock") {
         return "Rock";
@@ -24,8 +24,47 @@ function getHumanChoice() { //user's choice
     } else if (choice === "scissors") {
         return "Scissors";
     } else {
-        return "Try again";
+        return "Invalid choice";
     }
 }
 
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        return "It's a tie!";
+    }
+
+    if (humanChoice === "Rock") {
+        if (computerChoice === "Scissors") {
+            return "You win! Rock beats Scissors";
+        } else {
+            return "You lose! Paper beats Rock";
+        }
+    }
+
+    if (humanChoice === "Paper") {
+        if (computerChoice === "Rock") {
+            return "You win! Paper beats Rock";
+        } else {
+            return "You lose! Scissors beats Paper";
+        }
+    }
+
+    if (humanChoice === "Scissors") {
+        if (computerChoice === "Paper") {
+            return "You win! Scissors beats Paper";
+        } else {
+            return "You lose! Rock beats Scissors"
+        }
+    }
+}
+
+let humanChoice = getHumanChoice();
+if (humanChoice !== "Invalid choice") {
+    let computerChoice = getComputerChoice();
+    console.log("Computer chose:", computerChoice);
+    console.log(playRound(humanChoice, computerChoice))
+} else {
+    console.log("Enter Rock, Paper or Scissors")
+}
