@@ -30,31 +30,48 @@ function getHumanChoice() { //user's choice
 
 // console.log(getHumanChoice());
 
+    let humanScore = 0;
+    let computerScore = 0;
+
 function playRound(humanChoice, computerChoice) {
+
     if (humanChoice === computerChoice) {
         return "It's a tie!";
     }
 
     if (humanChoice === "Rock") {
         if (computerChoice === "Scissors") {
+            humanScore++; //increment humanScore by 1
+            console.log("Your score:", humanScore); //shows user's score
             return "You win! Rock beats Scissors";
-        } else {
+        } 
+        else {
+            computerScore++; //increment computerScore by 1
+            console.log("PC's score:", computerScore); //show computer's score
             return "You lose! Paper beats Rock";
         }
     }
 
     if (humanChoice === "Paper") {
         if (computerChoice === "Rock") {
+            humanScore++; //increment humanScore by 1
+            console.log("Your score:", humanScore); //shows user's score
             return "You win! Paper beats Rock";
         } else {
+            computerScore++; //increment computerScore by 1
+            console.log("PC's score:", computerScore); //show computer's score
             return "You lose! Scissors beats Paper";
         }
     }
 
     if (humanChoice === "Scissors") {
         if (computerChoice === "Paper") {
+            humanScore++; //increment humanScore by 1
+            console.log("Your score:", humanScore); //shows user's score
             return "You win! Scissors beats Paper";
         } else {
+            computerScore++; //increment computerScore by 1
+            console.log("PC's score:", computerScore); //show computer's score
             return "You lose! Rock beats Scissors"
         }
     }
@@ -76,3 +93,4 @@ fiveRound();
 fiveRound();
 fiveRound();
 fiveRound();
+
